@@ -1,0 +1,26 @@
+{
+  "name": "weather-typescript-api",
+  "version": "1.0.0",
+  "description": "An API to track the weather for surfers",
+  "main": "index.js",
+  "repository": "git@github.com:carloscarrinho/weather-typescript-api.git",
+  "author": "Carlos Eduardo F. Carrinho <carrinhoedu@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "api"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/src/index.js"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^15.12.2",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  }
+}
