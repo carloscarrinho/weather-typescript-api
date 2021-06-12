@@ -2,7 +2,8 @@
 
 ## Table of Contents
 ---
-- [Refference Docs](#refferencedocs)
+- [Refference Docs](#refferencedocs);
+- [Hot Tips](#hottips);
 
 ## Refference Docs:
 - [Typescript]();
@@ -14,4 +15,5 @@
 - [Axios](https://axios-http.com/docs/intro);
 
 ## Hot Tips
-- [Import class in definition file](https://stackoverflow.com/questions/39040108/import-class-in-definition-file-d-ts/51114250#51114250)
+- [Import class in definition file](https://stackoverflow.com/questions/39040108/import-class-in-definition-file-d-ts/51114250#51114250);
+- [Rewriting project history on Git](https://www.atlassian.com/git/tutorials/rewriting-history)
