@@ -18,3 +18,4 @@
 - [Import class in definition file](https://stackoverflow.com/questions/39040108/import-class-in-definition-file-d-ts/51114250#51114250);
 - [Rewriting project history on Git](https://www.atlassian.com/git/tutorials/rewriting-history);
 - [Changing a commit message](https://docs.github.com/en/github/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message);
+- [How to use test doubles](https://leanpub.com/construindo-apis-testaveis-com-nodejs/read#leanpub-auto-test-doubles)
