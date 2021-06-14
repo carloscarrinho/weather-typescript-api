@@ -13,6 +13,7 @@
 - [OvernightJs](https://github.com/seanpmaxwell/overnight);
 - [Storm Glass Weather API](https://docs.stormglass.io/#/);
 - [Axios](https://axios-http.com/docs/intro);
+- [Node Config](https://github.com/lorenwest/node-config);
 
 ## Hot Tips
 - [Import class in definition file](https://stackoverflow.com/questions/39040108/import-class-in-definition-file-d-ts/51114250#51114250);
