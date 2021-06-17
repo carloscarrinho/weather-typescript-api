@@ -52,9 +52,8 @@ export class Forecast {
         }));
         pointsWithCorrectSources.push(...enrichedBeachData);
       }
-  
+
       return this.mapForecastByTime(pointsWithCorrectSources);
-      
     } catch (error: any) {
       throw new ForecastProcessingInternalError(error.message);
     }
