@@ -12,7 +12,7 @@ export class UsersController extends BaseController {
       const result = await user.save();
       res.status(201).send(result);
     } catch (err: any) {
-      this.sendCreatedUpdateErrorResponse(res, err);
+      this.sendCreateUpdateErrorResponse(res, err);
     }
   }
 }
