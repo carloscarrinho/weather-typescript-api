@@ -14,6 +14,7 @@
 - [Storm Glass Weather API](https://docs.stormglass.io/#/);
 - [Axios](https://axios-http.com/docs/intro);
 - [Node Config](https://github.com/lorenwest/node-config);
+- [Nock](https://github.com/nock/nock);
 
 ## Hot Tips
 - [Clean Architecture Article FreeCodeCamp](https://www.freecodecamp.org/news/a-quick-introduction-to-clean-architecture-990c014448d2/);
