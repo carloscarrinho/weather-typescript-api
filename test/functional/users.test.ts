@@ -62,5 +62,51 @@ describe('Users functional tests', () => {
         error: 'User validation failed: email: already exists in the database.',
       });
     });
+
+    describe('When authenticating an user', () => {
+      it('Should generate a token for a valid user', async () => {
+        // GIVEN
+        const newUser = {
+          name: 'John Doe',
+          email: 'john@mail.com',
+          password: '1234',
+        };
+        await new User(newUser).save();
+        // WHEN
+        const response = await global.testRequest.post('/users/authenticate').send({
+          email: newUser.email,
+          password: newUser.password
+        });
+        // THEN
+        expect(response.body).toEqual(expect.objectContaining({ token: expect.any(String) }));
+      });
+
+      it('Should return UNAUTHORIZED if the user with the given email is not found.', async () => {
+        // WHEN
+        const response = await global.testRequest.post('/users/authenticate').send({
+          email: 'some-email@mail.com',
+          password: '1234'
+        });
+        // THEN
+        expect(response.status).toBe(401);
+      });
+
+      it('Should return UNAUTHORIZED if the user is found but the password does not match.', async () => {
+        // GIVEN
+        const newUser = {
+          name: 'John Doe',
+          email: 'john@mail.com',
+          password: '1234',
+        };
+        await new User(newUser).save();
+        // WHEN
+        const response = await global.testRequest.post('/users/authenticate').send({
+          email: newUser.email,
+          password: 'wrong password'
+        });
+        // THEN
+        expect(response.status).toBe(401);
+      });
+    });
   });
 });
