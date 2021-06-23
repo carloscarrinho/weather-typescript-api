@@ -1,4 +1,4 @@
-# DEPLOYMENT CONFIGURATION
+#!/usr/bin/env bash
 ## add a directory called '.ssh'
 mkdir -p ~/.ssh
 ## copy ssh key from environmnet variable to a file 'id_rsa'
