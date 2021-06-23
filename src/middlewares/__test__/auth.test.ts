@@ -28,7 +28,7 @@ describe('Auth Middleware', () => {
     const sendMock = jest.fn();
     const resFake = {
       status: jest.fn(() => ({
-        send: sendMock
+        send: sendMock,
       })),
     };
     const nextFake = jest.fn();
@@ -50,7 +50,7 @@ describe('Auth Middleware', () => {
     const sendMock = jest.fn();
     const resFake = {
       status: jest.fn(() => ({
-        send: sendMock
+        send: sendMock,
       })),
     };
     const nextFake = jest.fn();
