@@ -31,7 +31,6 @@ export class SetupServer extends Server {
   public async close(): Promise<void> {
     try {
       await database.close();
-      console.log('Mongodb successfully disconnected');
     } catch (error: any) {
       console.log(error.message);
     }
@@ -56,7 +55,6 @@ export class SetupServer extends Server {
   private async setupDatabase(): Promise<void> {
     try {
       await database.connect();
-      console.log('Mongodb successfully connected');
     } catch (error: any) {
       console.log(error.message);
     }
