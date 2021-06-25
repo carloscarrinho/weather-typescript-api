@@ -18,6 +18,7 @@
 - [Json Web Token](https://jwt.io/introduction);
 - [Github Actions](https://docs.github.com/en/actions);
 - [Pino](https://github.com/pinojs/pino);
+- [Express Pino Logger](https://github.com/pinojs/express-pino-logger);
 
 ## Hot Tips
 - [Clean Architecture Article FreeCodeCamp](https://www.freecodecamp.org/news/a-quick-introduction-to-clean-architecture-990c014448d2/);
