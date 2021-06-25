@@ -27,4 +27,5 @@
 - [Error.captureStackTrace](https://nodejs.org/api/errors.html#errors_error_capturestacktrace_targetobject_constructoropt);
 - [Graceful Shutdown](https://hackernoon.com/graceful-shutdown-in-nodejs-2f8f59d1c357);
 - [How to use test doubles - pt_BR](https://leanpub.com/construindo-apis-testaveis-com-nodejs/read#leanpub-auto-test-doubles);
-- [How to create SSH keys - pt_BR](https://tecdicas.com/como-criar-e-utilizar-chaves-ssh-no-windows-e-linux/)
+- [How to create SSH keys - pt_BR](https://tecdicas.com/como-criar-e-utilizar-chaves-ssh-no-windows-e-linux/);
+- [Understanding Cors - pt_BR](https://medium.com/@alexandremjacques/entendendo-o-cors-parte-8331d0a777e1);
