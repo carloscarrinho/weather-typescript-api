@@ -27,25 +27,29 @@ export class Forecast {
   public async processForecastForBeaches(
     beaches: Beach[]
   ): Promise<TimeForecast[]> {
-    const pointsWithCorrectSources: BeachForecast[] = [];
-    logger.info(`Preparing the forecast for ${beaches.length}`)
     try {
-      for (const beach of beaches) {
-        const rating = new this.RatingService(beach);
-        const points = await this.stormGlass.fetchPoints(beach.lat, beach.lng);
-        const enrichedBeachData = this.enrichBeachData(points, beach, rating);
-        pointsWithCorrectSources.push(...enrichedBeachData);
-      }
-
-      const timeForecast = this.mapForecastByTime(pointsWithCorrectSources);
+      const beachesForecast = await this.calculateRating(beaches);
+      const timeForecast = this.mapForecastByTime(beachesForecast);
       return timeForecast.map((t) => ({
         time: t.time,
-        forecast: _.orderBy(t.forecast, ['rating'], 'desc')
+        forecast: _.orderBy(t.forecast, ['rating'], 'desc'),
       }));
     } catch (error: any) {
       logger.error(error);
       throw new ForecastProcessingInternalError(error.message);
     }
+  }
+
+  private async calculateRating(beaches: Beach[]): Promise<BeachForecast[]> {
+    const pointsWithCorrectSources: BeachForecast[] = [];
+    logger.info(`Preparing the forecast for ${beaches.length}`);
+    for (const beach of beaches) {
+      const rating = new this.RatingService(beach);
+      const points = await this.stormGlass.fetchPoints(beach.lat, beach.lng);
+      const enrichedBeachData = this.enrichBeachData(points, beach, rating);
+      pointsWithCorrectSources.push(...enrichedBeachData);
+    }
+    return pointsWithCorrectSources;
   }
 
   private enrichBeachData(
