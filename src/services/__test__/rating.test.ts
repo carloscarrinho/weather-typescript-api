@@ -1,4 +1,4 @@
-import { Beach, BeachPosition } from '@src/models/beach';
+import { Beach, GeoPosition } from '@src/models/beach';
 import { Rating } from '../rating';
 
 describe('Rating Service', () => {
@@ -6,7 +6,7 @@ describe('Rating Service', () => {
     lat: -33.792726,
     lng: 151.289824,
     name: 'Manly',
-    position: BeachPosition.E,
+    position: GeoPosition.E,
     user: 'some-user',
   };
   const defaultRating = new Rating(defaultBeach);
@@ -108,10 +108,9 @@ describe('Rating Service', () => {
   describe('Get rating based on wind and wave positions', () => {
     it('should get rating 1 for a beach with onshore wind', async () => {
       // WHEN
-      // TODO: change 'BeachPosition' enum to 'Position' or create a 'WindPosition'
       const rating = defaultRating.getRatingBasedOnWindAndWavePositions(
-        BeachPosition.E,
-        BeachPosition.E
+        GeoPosition.E,
+        GeoPosition.E
       );
       // THEN
       expect(rating).toBe(1);
@@ -119,10 +118,9 @@ describe('Rating Service', () => {
 
     it('should get rating 3 for a beach with cross wind', async () => {
       // WHEN
-      // TODO: change 'BeachPosition' enum to 'Position' or create a 'WindPosition'
       const rating = defaultRating.getRatingBasedOnWindAndWavePositions(
-        BeachPosition.E,
-        BeachPosition.S
+        GeoPosition.E,
+        GeoPosition.S
       );
       // THEN
       expect(rating).toBe(3);
@@ -130,10 +128,9 @@ describe('Rating Service', () => {
 
     it('should get rating 5 for a beach with offshore wind', async () => {
       // WHEN
-      // TODO: change 'BeachPosition' enum to 'Position' or create a 'WindPosition'
       const rating = defaultRating.getRatingBasedOnWindAndWavePositions(
-        BeachPosition.E,
-        BeachPosition.W
+        GeoPosition.E,
+        GeoPosition.W
       );
       // THEN
       expect(rating).toBe(5);
@@ -213,35 +210,35 @@ describe('Rating Service', () => {
       // WHEN
       const response = defaultRating.getPositionFromLocation(92);
       // THEN
-      expect(response).toBe(BeachPosition.E);
+      expect(response).toBe(GeoPosition.E);
     });
 
     it('should get the point based on an north location 1', async () => {
       // WHEN
       const response = defaultRating.getPositionFromLocation(360);
       // THEN
-      expect(response).toBe(BeachPosition.N);
+      expect(response).toBe(GeoPosition.N);
     });
 
     it('should get the point based on an north location 2', async () => {
       // WHEN
       const response = defaultRating.getPositionFromLocation(40);
       // THEN
-      expect(response).toBe(BeachPosition.N);
+      expect(response).toBe(GeoPosition.N);
     });
 
     it('should get the point based on an south location', async () => {
       // WHEN
       const response = defaultRating.getPositionFromLocation(200);
       // THEN
-      expect(response).toBe(BeachPosition.S);
+      expect(response).toBe(GeoPosition.S);
     });
 
     it('should get the point based on an west location', async () => {
       // WHEN
       const response = defaultRating.getPositionFromLocation(300);
       // THEN
-      expect(response).toBe(BeachPosition.W);
+      expect(response).toBe(GeoPosition.W);
     });
   });
 });
