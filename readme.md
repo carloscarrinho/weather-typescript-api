@@ -19,6 +19,7 @@
 - [Github Actions](https://docs.github.com/en/actions);
 - [Pino](https://github.com/pinojs/pino);
 - [Express Pino Logger](https://github.com/pinojs/express-pino-logger);
+- [Lodash](https://lodash.com/docs/4.17.15);
 
 ## Hot Tips
 - [Clean Architecture Article FreeCodeCamp](https://www.freecodecamp.org/news/a-quick-introduction-to-clean-architecture-990c014448d2/);
