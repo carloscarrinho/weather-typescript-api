@@ -23,8 +23,8 @@ export class SetupServer extends Server {
   public async init(): Promise<void> {
     this.setupExpress();
     await this.docSetup();
-    this.setupControllers();
     await this.setupDatabase();
+    this.setupControllers();
     this.setupErrorHandlers();
   }
 
@@ -76,7 +76,7 @@ export class SetupServer extends Server {
     try {
       await database.connect();
     } catch (error: any) {
-      console.log(error.message);
+      logger.fatal(error.message);
     }
   }
 
